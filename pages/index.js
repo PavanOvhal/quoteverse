@@ -11,6 +11,7 @@ export default function Home() {
       { text: "The best thing to hold onto in life is each other.", author: "Audrey Hepburn" },
       { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
       { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+      { text: "If you are homeless, Just buy a house.", author: "Khushi Chauhan" },
       { text: "Love is not about how many days, months, or years you’ve been together. Love is about how much you love each other every single day.", author: "Unknown" },
       { text: "Do not wait for the perfect moment. Take the moment and make it perfect.", author: "Zoey Sayward" },
       { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
