@@ -1,20 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [quote, setQuote] = useState("Loading...");
   const [author, setAuthor] = useState("");
 
-  const getQuote = async () => {
-    try {
-      const response = await fetch("https://api.quotable.io/random");
-      const data = await response.json();
-      setQuote(data.content);
-      setAuthor(data.author);
-    } catch (error) {
-      console.error("API Error:", error);
-      setQuote("Could not load quote.");
-      setAuthor("");
-    }
+  const getQuote = () => {
+    const quotes = [
+      { text: "You don’t love someone for their looks... but because they sing a song only you can hear.", author: "Oscar Wilde" },
+      { text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi" },
+      { text: "The best thing to hold onto in life is each other.", author: "Audrey Hepburn" },
+      { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+      { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+      { text: "Love is not about how many days, months, or years you’ve been together. Love is about how much you love each other every single day.", author: "Unknown" },
+      { text: "Do not wait for the perfect moment. Take the moment and make it perfect.", author: "Zoey Sayward" },
+      { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+      { text: "Love cures people—both the ones who give it and the ones who receive it.", author: "Karl Menninger" },
+      { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" }
+    ];
+    const random = Math.floor(Math.random() * quotes.length);
+    setQuote(quotes[random].text);
+    setAuthor(quotes[random].author);
   };
 
   useEffect(() => {
@@ -22,18 +27,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white px-4">
-      <div className="bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-xl max-w-xl w-full text-center shadow-xl">
-        <h1 className="text-3xl font-bold mb-4">📜 QuoteVerse</h1>
-        <p className="text-xl italic mb-4">"{quote}"</p>
-        {author && <p className="text-md font-semibold mb-6">— {author}</p>}
-        <button
-          onClick={getQuote}
-          className="bg-white text-indigo-600 font-bold px-6 py-2 rounded-full hover:bg-indigo-100 transition"
-        >
-          New Quote
-        </button>
-      </div>
-    </div>
+<div className="container">
+  <div className="quote-box">
+    <h1>Quote Generator</h1>
+    <p className="description">
+      Inspire simplicity through beautiful quotes and peaceful design.
+    </p>
+    <p className="quote">"{quote}"</p>
+    {author && <p className="author">— {author}</p>}
+    <button onClick={getQuote} className="button">
+      QUOTE
+    </button>
+  </div>
+</div>
   );
 }
