@@ -11,7 +11,7 @@ export default function Home() {
       setQuote(data.content);
       setAuthor(data.author);
     } catch (error) {
-      console.error("Error fetching quote:", error);
+      console.error("API Error:", error);
       setQuote("Could not load quote.");
       setAuthor("");
     }
