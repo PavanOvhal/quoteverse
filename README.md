@@ -35,6 +35,6 @@ cd quoteverse
 
 🙋‍♂️ Developed By
    Pavan Ovhal
-  🔗 GitHub
+  🔗 (https://github.com/PavanOvhal)
 
 
