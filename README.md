@@ -9,7 +9,7 @@
 - 📜 Display of curated quotes
 - 🎨 Beautiful, responsive design (mobile + desktop)
 - 🌓 Aesthetic interface
-
+- 🚀 Custom REST API hosted on Render
 ---
 
 ## 🛠️ Tech Stack
